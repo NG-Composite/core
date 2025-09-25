@@ -1,7 +1,7 @@
 <button
   type="button"
   class="px-4 py-2 rounded-lg cursor-pointer"
-  [class]="theme.instance('danger', 'fill')"
+  [ngClass]="theme.instance(color, variant)"
 >
-  danger
+  <ng-content></ng-content>
 </button>

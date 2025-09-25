@@ -1,9 +1,12 @@
 import { Component, Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'comp-button',
   templateUrl: './button.html',
-  styles: ``,
+  styleUrls: ['../../styles.css'],
+  standalone: true,
+  imports: [CommonModule],
 })
 export class Button {
   @Input() color: string = 'success';
