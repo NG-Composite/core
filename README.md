@@ -1,4 +1,105 @@
-# Composite
+# @ng-composite/core
+
+Angular Component Library con Tailwind CSS integrado
+
+## Instalación
+
+```bash
+npm install @ng-composite/core
+```
+
+## Setup Rápido ⚡
+
+Después de instalar la librería, ejecuta el comando setup para configurar automáticamente Tailwind CSS:
+
+```bash
+npx ng-composite-setup
+```
+
+Este comando:
+
+- ✅ Copia `tailwind.config.js` optimizado para @ng-composite/core
+- ✅ Te da instrucciones paso a paso para completar la configuración
+- ✅ Evita sobrescribir configuraciones existentes
+
+### Setup Manual (alternativo)
+
+Si prefieres configurar manualmente:
+
+1. **Instala Tailwind CSS:**
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+```
+
+2. **Copia la configuración desde node_modules:**
+
+```bash
+cp ./node_modules/@ng-composite/core/tailwind.config.js ./tailwind.config.js
+```
+
+3. **Agrega las directivas de Tailwind a tu `src/styles.css`:**
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+## Uso de Componentes
+
+### Importar el módulo
+
+```typescript
+import { NgModule } from "@angular/core";
+import { CompositeModule } from "@ng-composite/core";
+
+@NgModule({
+  imports: [CompositeModule],
+  // ...
+})
+export class AppModule {}
+```
+
+### Usar componentes standalone
+
+```typescript
+import { Component } from "@angular/core";
+import { Button } from "@ng-composite/core";
+
+@Component({
+  selector: "app-example",
+  standalone: true,
+  imports: [Button],
+  template: `
+    <comp-button [color]="'primary'" [variant]="'fill'"> Click me! </comp-button>
+
+    <comp-button [color]="'danger'" [variant]="'border'"> Danger Button </comp-button>
+
+    <comp-button [color]="'success'" [variant]="'no-fill'"> Success Button </comp-button>
+  `,
+})
+export class ExampleComponent {}
+```
+
+## Componentes Disponibles
+
+### Button
+
+Propiedades:
+
+- `color`: 'primary' | 'danger' | 'success' (default: 'success')
+- `variant`: 'fill' | 'border' | 'no-fill' (default: 'fill')
+
+Ejemplo:
+
+```html
+<comp-button [color]="'primary'" [variant]="'border'"> Mi Botón </comp-button>
+```
+
+---
+
+# Development
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.0.
 

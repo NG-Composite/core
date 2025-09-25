@@ -1,10 +1,16 @@
 {
   "author": "Backsoul",
   "name": "@ng-composite/core",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "repository": {
     "type": "git",
     "url": "https://github.com/NG-Composite/core.git"
+  },
+  "scripts": {
+    "setup": "cp ./node_modules/@ng-composite/tailwind.config.js ./tailwind.config.js && echo 'tailwind.config.js copiado exitosamente. Ahora puedes ejecutar: npx tailwindcss init -p' && echo 'Recuerda agregar las directivas @tailwind en tu styles.css'"
+  },
+  "bin": {
+    "ng-composite-setup": "./setup.js"
   },
   "peerDependencies": {
     "@angular/common": "^20.3.0",
